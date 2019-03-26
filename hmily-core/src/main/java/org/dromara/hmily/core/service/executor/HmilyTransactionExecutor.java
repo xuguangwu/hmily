@@ -317,6 +317,15 @@ public class HmilyTransactionExecutor {
         CURRENT.remove();
     }
 
+    /**
+     * 封装HmilyTransaction
+     * 将远程调用的方法签名分别封装到confirmInvocation和cancelInvocation中
+     *
+     * @param point
+     * @param role
+     * @param transId
+     * @return
+     */
     private HmilyTransaction buildHmilyTransaction(final ProceedingJoinPoint point, final int role, final String transId) {
         HmilyTransaction hmilyTransaction;
         if (StringUtils.isNoneBlank(transId)) {

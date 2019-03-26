@@ -138,6 +138,7 @@ public class DubboHmilyTransactionFilter implements Filter {
         if (StringUtils.isBlank(cancelMethodName)) {
             cancelMethodName = method.getName();
         }
+        //将tcc补偿将要调用的方法和参数传入到HmilyInvocation
         HmilyInvocation confirmInvocation = new HmilyInvocation(clazz, confirmMethodName, args, arguments);
         HmilyInvocation cancelInvocation = new HmilyInvocation(clazz, cancelMethodName, args, arguments);
         //封装调用点
